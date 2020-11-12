@@ -17,9 +17,9 @@ def push():
 
     project_url_new='https://<gitlab-instance-new.com>/api/v4/projects/<new-project-id>/variables/'
 
-    android_env_vars = json.loads(open(api_fetch_file).read())
+    env_vars = json.loads(open(api_fetch_file).read())
 
-    for x in android_env_vars:
+    for x in env_vars:
 
         out = 'curl --request POST --header \'PRIVATE-TOKEN: '+gitlab_api_token_new+'\' '
         out += project_url_new
